@@ -12,15 +12,10 @@ export default class Header extends React.Component {
         this.defaultProps = {
             children: "!"
         }
-
-        this.propTypes = {
-            children: PropTypes.string,
-            componentToUse: PropTypes.func,
-            ComponentToUse: PropTypes.func
-        }
     }
 
     render() {
+        console.log('header')
         let { children, componentToUse, ComponentToUse } = this.props;
         let content = children;
         if (componentToUse) {
@@ -33,10 +28,15 @@ export default class Header extends React.Component {
 
         return (
             <h1 className="header">
-                <img src={icon} height="32" />
+                <img src={icon} height="32" alt="icon" />
                 {content}
             </h1>
         )
     }
+}
 
+Header.prototype.propTypes = {
+    children: PropTypes.string,
+    componentToUse: PropTypes.func,
+    ComponentToUse: PropTypes.func
 }

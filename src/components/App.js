@@ -1,15 +1,12 @@
+// eslint-disable-next-line
 import React from 'react';
-import Header from './Header/Header';
-import Uppercase from './Uppercase';
+// eslint-disable-next-line
+import HideMe from './HideMe';
 
-export default function App(props) {
+export default function App() {
     return (
         <div className="app">
-            <Header>Warsztaty React</Header>
-            <Header children={<Uppercase text="uppercase me"/>}/>
-            <Header />
-            <Header children="me too!" ComponentToUse={Uppercase} />
-            <Header children="me too!" componentToUse={Uppercase} />
+            <HideMe />
         </div>
     )
 }
