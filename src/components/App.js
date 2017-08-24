@@ -1,12 +1,17 @@
 // eslint-disable-next-line
 import React from 'react';
 // eslint-disable-next-line
-import HideMe from './HideMe';
+import FormUncontrolled from './FormUncontrolled';
 
 export default function App() {
+    const initialValues = {
+        input: "test1",
+        checkbox: true,
+        select: "two"
+    }
     return (
         <div className="app">
-            <HideMe />
+            <FormUncontrolled initialValues={initialValues} onSubmit={(values)=>{console.log(values)}}/>
         </div>
     )
 }
