@@ -7,19 +7,21 @@ export default class HideMe extends Component {
         super();
 
         this.state = {
-            visible: true
+            visible: true,
+            counterValue: 0
         };
+
     }
 
     hide = () => {
-        this.setState((prevState) => ({ visible: !prevState.visible }));
+        this.setState((prevState) => ({ visible: !prevState.visible, counterValue: 1 }));
     }
 
     getContent = ({ visible }) => {
         return (
             <div className="hide-me__content">
                 {visible ? "I'm visible" : null}
-                <Counter onThirdClick={this.hide} />
+                <Counter onThirdClick={this.hide} counterValue={this.state.counterValue} />
             </div>
         )
     }

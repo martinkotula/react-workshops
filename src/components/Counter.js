@@ -6,7 +6,7 @@ export default class Counter extends Component {
         super(props);
 
         this.state = {
-            counter: 0
+            counter: props.counterValue
         };
     }
 
@@ -15,7 +15,7 @@ export default class Counter extends Component {
     }
 
     render() {
-        console.log('counter')
+        console.log(this.props)
         return (
             <div className="counter">
                 <Header>Counter</Header>
@@ -28,6 +28,13 @@ export default class Counter extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         return this.state.counter !== nextState.counter;
     }
+
+    componentWillReceiveProps(nextProps){
+        this.setState({
+            counter: nextProps.counterValue
+        });
+    }
+    
 
     componentDidUpdate(prevProps, prevState) {
         if (this.state.counter === 3) {
