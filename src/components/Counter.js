@@ -1,21 +1,19 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Header from './Header'
 
-export default class Counter extends Component{
-    constructor(props){
+export default class Counter extends Component {
+    constructor(props) {
         super(props);
 
         this.state = {
             counter: 0
         };
-
-        // this.increment = this.increment.bind(this);
     }
 
     increment = () => {
-        this.setState((prevState, props) => ({counter: prevState.counter + 1}));
+        this.setState((prevState, props) => ({ counter: prevState.counter + 1 }));
     }
-    
+
     render() {
         console.log('counter')
         return (
@@ -29,5 +27,11 @@ export default class Counter extends Component{
 
     shouldComponentUpdate(nextProps, nextState) {
         return this.state.counter !== nextState.counter;
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.counter === 3) {
+            this.props.onThirdClick.call(this);
+        }
     }
 }

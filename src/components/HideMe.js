@@ -19,7 +19,7 @@ export default class HideMe extends Component {
         return (
             <div className="hide-me__content">
                 {visible ? "I'm visible" : null}
-                <Counter />
+                <Counter onThirdClick={this.hide} />
             </div>
         )
     }
