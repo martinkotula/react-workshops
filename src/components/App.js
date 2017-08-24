@@ -7,6 +7,7 @@ export default function App(props) {
         <div className="app">
             <Header>Warsztaty React</Header>
             <Header children={<Uppercase text="uppercase me"/>}/>
+            <Header children={2}/>
             <Header children="me too!" ComponentToUse={Uppercase} />
             <Header children="me too!" componentToUse={Uppercase} />
         </div>
