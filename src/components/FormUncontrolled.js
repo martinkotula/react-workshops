@@ -15,16 +15,16 @@ class FormUncontrolled extends React.Component{
     }
 
     render() {
-        const initialValues = this.props.initialValues;
+        const {input, checkbox, select} = this.props.initialValues;
 
         return(
             <form onSubmit={this.handleSubmit}>
-                <input type="text" defaultValue={initialValues.input} ref={input => this.input = input} />
+                <input type="text" defaultValue={input} ref={input => this.input = input} />
                
                 <br />
-                <input type="checkbox" defaultChecked={initialValues.checkbox} ref={checkbox => this.checkbox = checkbox} />
+                <input type="checkbox" defaultChecked={checkbox} ref={checkbox => this.checkbox = checkbox} />
                 <br />
-                <select defaultValue={initialValues.select} ref={select => this.select = select} >
+                <select defaultValue={select} ref={select => this.select = select} >
                     <option value="one">One</option>
                     <option value="two">Two</option>
                     <option value="three">Three</option>

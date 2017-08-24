@@ -4,14 +4,12 @@ import React from 'react';
 import FormUncontrolled from './FormUncontrolled';
 
 export default function App() {
-    const initialValues = {
-        input: "test1",
-        checkbox: true,
-        select: "two"
-    }
     return (
         <div className="app">
-            <FormUncontrolled initialValues={initialValues} onSubmit={(values)=>{console.log(values)}}/>
+            <FormUncontrolled 
+                initialValues={{input: "test1", checkbox: true,  select: "two"}}
+                onSubmit={(values)=>{console.log(values)}}            
+            />
         </div>
     )
 }
