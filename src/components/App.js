@@ -1,12 +1,12 @@
 // eslint-disable-next-line
 import React from 'react';
 // eslint-disable-next-line
-import FormUncontrolled from './FormUncontrolled';
+import FormControlled from './FormControlled';
 
 export default function App() {
     return (
         <div className="app">
-            <FormUncontrolled 
+            <FormControlled 
                 initialValues={{input: "test1", checkbox: true,  select: "two"}}
                 onSubmit={(values)=>{console.log(values)}}            
             />
