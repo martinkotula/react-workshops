@@ -26,4 +26,8 @@ export default class Counter extends Component{
             </div>
         );
     }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.state.counter !== nextState.counter;
+    }
 }

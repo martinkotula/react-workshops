@@ -33,6 +33,10 @@ export default class Header extends React.Component {
             </h1>
         )
     }
+
+    shouldComponentUpdate(nextProps, nextState){
+        return false;
+    }
 }
 
 Header.prototype.propTypes = {
