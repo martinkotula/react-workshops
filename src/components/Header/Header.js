@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Header.css';
 import icon from './download.jpg';
 
-export default class Header extends React.Component {
+export default class Header extends React.PureComponent {
 
     constructor() {
         super();
@@ -34,9 +34,6 @@ export default class Header extends React.Component {
         )
     }
 
-    shouldComponentUpdate(nextProps, nextState){
-        return false;
-    }
 }
 
 Header.prototype.propTypes = {
